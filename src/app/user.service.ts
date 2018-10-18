@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
 import { User } from './user/user';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { Observable, of } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
+const endpoint = 'http://localhost:8080/api/';
+
+@Injectable()
 export class UserService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getUsers() : Observable<User[]>{
-    return of([
-      {id : 1, name : 'user1'},
-      {id : 2, name : 'user2'}, 
-      {id : 3, name : 'user3'},   
-          ]);
+  getUsers() : Observable<any>{
+    return this.http.get(endpoint+'users');
   }
 }
+
+
