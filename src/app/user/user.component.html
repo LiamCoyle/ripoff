@@ -1,40 +1,18 @@
-<h2>
-  {{user.name | uppercase}}
-</h2>
-<div><span>id :</span>{{user.id}}</div>
-<div><span>name :</span>{{user.name}}</div>
-<div class="row">
-  <div class="col-md-6"></div>
-  <div class="col-md-6">
-    <label>name:
-      <input [(ngModel)]="user.name"  placeholder="name">
-    </label>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-  <div class="col-md-1">.col-md-1</div>
-</div>
-<div class="row">
-  <div class="col-md-8">.col-md-8</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-</div>
-<div class="row">
-  <div class="col-md-6">.col-md-6</div>
-  <div class="col-md-6">.col-md-6</div>
-</div>
+<h2>User List</h2>
+
+<!--<div>
+  <button (click)="add()">
+    Add
+  </button>
+</div>-->
+
+<ul class="users">
+  <li *ngFor="let u of users; let i=index;">
+    <span>{{u.name}}/{{u.password}}</span>
+    <!--<a routerLink="/user-details/{{u._id}}">
+      <span class="badge">{{i+1}}</span> {{u.name}}
+    </a>
+    <button class="delete" title="delete product"
+      (click)="delete(u._id)">x</button>-->
+  </li>
+</ul>
