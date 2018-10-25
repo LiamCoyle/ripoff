@@ -16,10 +16,12 @@ var productSchema = mongoose.Schema({
     type: Number
   },
   site_id: {
-    type: mongoose.Schema.ObjectId
+    type:  mongoose.Schema.ObjectId,
+    ref: 'site'
   },
   menu_id: {
-    type: mongoose.Schema.ObjectId
+    type: mongoose.Schema.ObjectId,
+    ref: 'menu'
   },
   prix:{
     type: Number
