@@ -19,9 +19,12 @@ exports.index = function (req, res) {
 };
 // Handle create contact actions
 exports.new = function (req, res) {
-    var user = new User();
-    user.name = req.body.name ? req.body.name : user.name;
-    user.password = req.body.password;
+    var user = User({
+        name : req.body.name || 'default name',
+        password : req.body.name,
+    });
+    //user.name = req.body.name ? req.body.name : user.name;
+    //user.password = req.body.password;
 // save the contact and check for errors
     user.save(function (err) {
         res.json({
@@ -67,7 +70,7 @@ exports.delete = function (req, res) {
     }, function (err, contact) {
         if (err)
             res.send(err);
-res.json({
+    res.json({
             status: "success",
             message: 'User deleted'
         });

@@ -5,12 +5,12 @@ let router = require('express').Router();
 router.get('/', function (req, res) {
     res.json({
         status: 'API Its Working',
-        message: 'Welcome to RESTHub crafted with love!',
+        message: 'Welcome to RipOff!',
     });
 });
-// Import contact controller
+/*// Import user controller
 var userController = require('../controllers/userController');
-// Contact routes
+// user routes
 router.route('/users')
     .get(userController.index)
     .post(userController.new);
@@ -18,6 +18,9 @@ router.route('/users/:user_id')
     .get(userController.view)
     .patch(userController.update)
     .put(userController.update)
-    .delete(userController.delete);
+    .delete(userController.delete);*/
+
+//require ('./user.route')(router);
 // Export API routes
+router.use('/user', require('./user.route'));
 module.exports = router;

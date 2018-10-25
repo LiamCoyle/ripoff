@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 // Define collection and schema for Users
 var userSchema = mongoose.Schema({
+  //_id: { type: mongoose.Schema.ObjectId, auto: true },
   name: {
     type: String
   },
@@ -13,7 +14,11 @@ var userSchema = mongoose.Schema({
 });
 //var User = module.exports = mongoose.model('user', userSchema);
 var User = mongoose.model('User', userSchema);
-module.exports.get = function (callback, limit) {
+
+
+User.get = function (callback, limit) {
   User.find(callback).limit(limit);
-}
+};
+
+module.exports = User;
 //module.exports = mongoose.model('User', userSchema);
