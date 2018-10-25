@@ -1,9 +1,9 @@
 // userController.js
 // Import user model
-User = require('../models/user.schema');
+Product = require('../models/product.schema');
 // Handle index actions
 exports.index = function (req, res) {
-    User.get(function (err, users) {
+    Product.get(function (err, products) {
         if (err) {
             res.json({
                 status: "error",
@@ -12,67 +12,75 @@ exports.index = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "User retrieved successfully",
-            data: users
+            message: "Product retrieved successfully",
+            data: products
         });
     });
 };
 // Handle create contact actions
 exports.new = function (req, res) {
-    var user = User({
+    var product = Product({
         name : req.body.name || 'default name',
-        password : req.body.name,
+        url : req.body.url || null,
+        menu_id : req.body.menu_id,
+        prix : req.body.prix,
+        ean : req.body.ean,
+        site_id : req.body.site_id,
     });
     //user.name = req.body.name ? req.body.name : user.name;
     //user.password = req.body.password;
 // save the contact and check for errors
-    user.save(function (err) {
+    product.save(function (err) {
         res.json({
             message: 'New user created!',
-            data: user
+            data: product
         });
     });
 };
 // Handle view contact info
 exports.view = function (req, res) {
-    User.findById(req.params.user_id, function (err, user) {
+    Product.findById(req.params.product_id, function (err, product) {
         if (err)
             res.send(err);
         res.json({
-            message: 'user details loading..',
-            data: user
+            message: 'product details loading..',
+            data: product
         });
     });
 };
 // Handle update contact info
 exports.update = function (req, res) {
-    User.findById(req.params.user_id, function (err, user) {
+    Product.findById(req.params.user_id, function (err, product) {
         if (err)
             res.send(err);
-            user.name = req.body.name ? req.body.name : user.name;
-            user.password = req.body.password;
+            product.name = req.body.name || "default product name";
+            product.url = req.body.url;
+            product.menu_id = req.body.menu_id;
+            product.prix = req.body.prix;
+            product.site_id = req.body.site_id;
+            product.ean = req.body.ean;
 
 // save the user and check for errors
-        user.save(function (err) {
+    product.save(function (err) {
             if (err)
                 res.json(err);
             res.json({
-                message: 'User Info updated',
-                data: user
+                message: 'product Info updated',
+                data: product
             });
         });
     });
 };
 // Handle delete contact
 exports.delete = function (req, res) {
-    User.remove({
-        _id: req.params.user_id
+    Product.remove({
+        _id: req.params.product_id
     }, function (err, contact) {
         if (err)
             res.send(err);
     res.json({
             status: "success",
-            message: 'User deleted'
+            message: 'product deleted'
         });
     });
 };
