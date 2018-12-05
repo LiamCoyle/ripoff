@@ -19,6 +19,10 @@ export class UserService {
   getUsers() : Observable<any>{
     return this.http.get(endpoint+'user');
   }
+
+  createUser(input) : Observable<any>{
+    return this.http.post(endpoint+'user', input);
+  }
 }
 
 

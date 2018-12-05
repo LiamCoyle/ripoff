@@ -15,10 +15,11 @@ export class UserComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   getUsers()  {
-    this.userService.getUsers().subscribe((data:any) => {this.users = data.data;
-                                                            console.log(data);
-                                                          }
-                                          );
+    this.userService.getUsers().subscribe((data:any) => {
+      this.users = data.data;
+      console.log(data);
+    }
+    );
   }
 
   ngOnInit() {

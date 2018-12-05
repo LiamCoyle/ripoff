@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/ripoff_test');
+mongoose.connect('mongodb://admin:admin123@ds119988.mlab.com:19988/ripoff');
 var db = mongoose.connection;
 // Setup server port
 var port = process.env.PORT || 8080;
