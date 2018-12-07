@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  products : any[] = [];
+
+  constructor(private productService : ProductService) { }
 
   ngOnInit() {
+    this.productService.getProducts().subscribe(data => {
+      this.products = data.data;
+    });
+
   }
 
 }

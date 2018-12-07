@@ -15,6 +15,7 @@ import { SearchComponent } from './components/home/search/search.component';
 import { IntroductionComponent } from './components/home/introduction/introduction.component';
 
 import { UserService } from './services/user.service';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { UserService } from './services/user.service';
     AppRoutingModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [UserService],
+  providers: [
+    UserService,
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
