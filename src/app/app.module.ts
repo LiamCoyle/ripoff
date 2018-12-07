@@ -1,18 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
+import { SearchComponent } from './components/home/search/search.component';
+import { IntroductionComponent } from './components/home/introduction/introduction.component';
+
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    CarouselComponent,
+    SearchComponent,
+    IntroductionComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  schemas: [ NO_ERRORS_SCHEMA ],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
