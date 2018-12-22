@@ -16,6 +16,7 @@ import { IntroductionComponent } from './components/home/introduction/introducti
 
 import { UserService } from './services/user.service';
 import { ProductService } from './services/product.service';
+import { AuthenticationService } from './services/helper/authenticate.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ProductService } from './services/product.service';
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
     UserService,
-    ProductService
+    ProductService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
