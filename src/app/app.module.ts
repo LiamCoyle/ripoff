@@ -17,6 +17,7 @@ import { IntroductionComponent } from './components/home/introduction/introducti
 import { UserService } from './services/user.service';
 import { ProductService } from './services/product.service';
 import { AuthenticationService } from './services/helper/authenticate.service';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthenticationService } from './services/helper/authenticate.service';
     HomeComponent,
     CarouselComponent,
     SearchComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
