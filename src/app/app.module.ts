@@ -18,9 +18,8 @@ import { IntroductionComponent } from './components/home/introduction/introducti
 
 import { UserService } from './services/user.service';
 import { ProductService } from './services/product.service';
-import { ProfilComponent } from './components/profil/profil.component';
-import { LikeComponent } from './components/like/like.component';
-import { PresentationComponent } from './components/presentation/presentation.component';
+import { AuthenticationService } from './services/helper/authenticate.service';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +30,7 @@ import { PresentationComponent } from './components/presentation/presentation.co
     CarouselComponent,
     SearchComponent,
     IntroductionComponent,
-    ProfilComponent,
-    LikeComponent,
-    PresentationComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +42,8 @@ import { PresentationComponent } from './components/presentation/presentation.co
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
     UserService,
-    ProductService
+    ProductService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })

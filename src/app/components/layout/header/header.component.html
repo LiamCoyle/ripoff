@@ -27,9 +27,11 @@
       
       <li class="nav-item"><a class="nav-link" href="#">Partenaire</a></li>
       <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      <li class="nav-item"></li>
+      <li *ngIf="!currentUser" class="nav-item"><a class="nav-link" [routerLink]="['/login']"> Sign In</a></li>
+      <li *ngIf="currentUser"  class="nav-item"><a class="nav-link" [routerLink]="['/logout']"  > Sign Out</a></li>
         
     </ul>
+<<<<<<< HEAD
     <button type="button" class="btn btn-rose" routerLink="/video_presentation" routerLinkActive="active"><span class="my-auto">Voir notre outil en vidéo</span></button>
     <div class="col-auto">
       <i class="fa fa-heart" routerLink="/like" routerLinkActive="active"></i>
@@ -37,6 +39,14 @@
     <div class="col-auto">
       <i class="fa fa-user" routerLink="/profil" routerLinkActive="active"></i>
     </div>
+=======
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+
+>>>>>>> 0ebc96e61862ec94c45f8f000dc5b77a98e0f233
       
   </div>
 </nav>

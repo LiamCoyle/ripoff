@@ -6,7 +6,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const endPoint = 'http://localhost:8080/api/';
+const endPoint = 'http://localhost:8080/';
 
 @Injectable({
   providedIn: 'root'
