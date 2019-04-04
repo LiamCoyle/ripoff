@@ -1,31 +1,33 @@
 
-<div class="row mb-3">
-  <!--end of col-->
-  <div class="col">
-      <input class=" form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
-  </div>
-  <!--end of col-->
-    <div class="col-auto">
-      <i class="fa fa-search"></i>
-  </div>
-</div>
-
-<div class="row mb-3">
-  <div class=" card col-3">
-    <h5 class="card-title">Filter</h5>
+<div id="search">
+  <div class="col-12 text-center title">
+    <h1>Un produit qui vous correspond</h1>
+    <hr>
   </div>
 
-  <div class="col-9">
-    <div class="row">
-      <div class="card col-4" *ngFor ="let product of products">
-        <img class="card-img-top" src="" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text">{{product.name}}</p>
-          <button class="btn btn-primary">{{product.price}}</button>
-        </div>
-      </div>
+  <div class="row mb-3">
+    <div class="col">
+        <input class="form-control form-control-lg shadow" type="search" placeholder="Rechercher un produit">
     </div>
   </div>
 
+  <div class="row mb-3">
+    <div class=" card col-3">
+      <h5 class="card-title">Filter</h5>
+    </div>
+
+    <div class="col-9">
+      <div class="row">
+        <div class="card col-4" *ngFor ="let product of products">
+          <img class="card-img-top" src="" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.name}}</p>
+            <button class="btn btn-primary">{{product.price}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

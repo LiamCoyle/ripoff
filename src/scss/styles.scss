@@ -4,5 +4,32 @@
 @import "theme/inputs.scss";
 
 body{
-    background-color: #F88C98;
+    background-color: #f2f2f2;
+    background-image: url('../../src/assets/img/header-background.png');
+    background-size: 2100px;
+    background-repeat:no-repeat;
+    background-position: 50% -80px;
+
+
+
+    
+}
+.title{
+    color: #F88C98;
+}
+
+hr { 
+    display: block;
+    width:150px;
+    margin: auto;
+    margin-bottom:20px;
+    margin-top:20px;
+    height: 2px; 
+    color: #F88C98; 
+    background-color: #F88C98; 
+    border: none;
+} 
+
+.shadow{
+    box-shadow: 0px 0px 77px -5px rgba(0,0,0,0.75);
 }
