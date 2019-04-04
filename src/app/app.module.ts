@@ -3,6 +3,8 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +18,9 @@ import { IntroductionComponent } from './components/home/introduction/introducti
 
 import { UserService } from './services/user.service';
 import { ProductService } from './services/product.service';
+import { ProfilComponent } from './components/profil/profil.component';
+import { LikeComponent } from './components/like/like.component';
+import { PresentationComponent } from './components/presentation/presentation.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +30,17 @@ import { ProductService } from './services/product.service';
     HomeComponent,
     CarouselComponent,
     SearchComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    ProfilComponent,
+    LikeComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MDBBootstrapModule.forRoot()
+
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [

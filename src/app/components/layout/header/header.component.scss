@@ -1,0 +1,28 @@
+.navbar  {
+    border-bottom: 0.5px solid white;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    width:90%;
+    margin: auto;
+    color:white;
+    //opacity: 0.80;
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color:white;
+    font-weight: lighter;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #F88C98;
+    opacity: 1; /* Firefox */
+}
+.form-control {
+    color:white;
+}
+
+.btn-rose{
+    color:#F88C98;
+    background-color:white;
+    border-radius: 20px;
+}
