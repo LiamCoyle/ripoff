@@ -15,17 +15,8 @@ export class ProductService {
 
   constructor(private http:HttpClient) {}
 
-  getHLProducts() : Observable<any>{
-   /* console.log(this.http.get(endPoint+'HLProducts'));
-    return this.http.get(endPoint+'HLProducts');*/
-    let tmp = [];
-    let p1={'nom':"test1", 'PRIX':90};
-    tmp.push(p1);
-    return of(tmp);
-  }
 
   getProducts() : Observable<any>{
-    console.log(this.http.get(endPoint+'product'));
     return this.http.get(endPoint+'product');
   }
 

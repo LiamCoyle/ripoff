@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { ProductService } from 'src/app/services/product.service';
 
 import * as $ from 'jquery';
 import 'popper.js';
@@ -13,12 +14,15 @@ import 'bootstrap';
 })
 export class CarouselComponent implements OnInit, OnChanges {
 
-  @Input() products: any[]; 
+  products: any[]; 
 
-  constructor() { }
+  constructor(private productService : ProductService) { }
 
   ngOnInit() {
-    
+    this.productService.getProducts().subscribe((data : any)=>{
+      this.products = data;
+      console.log(data);
+    });
     
     $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){
       var next = $(this).next();
@@ -39,9 +43,9 @@ export class CarouselComponent implements OnInit, OnChanges {
   
     }
 
-ngOnChanges(){
-  console.log(this.products);
-}
+  ngOnChanges(){
+    console.log(this.products);
+  }
 
 
 }
