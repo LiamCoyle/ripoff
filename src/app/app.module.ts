@@ -23,6 +23,7 @@ import { AuthenticationService } from './services/helper/authenticate.service';
 import { BrandService } from './services/brand.service';
 
 import { JwtInterceptor} from './interceptors/jwt.interceptor';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { JwtInterceptor} from './interceptors/jwt.interceptor';
     CarouselComponent,
     SearchComponent,
     IntroductionComponent,
-    LoginComponent
+    LoginComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

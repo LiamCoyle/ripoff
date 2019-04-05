@@ -1,11 +1,12 @@
 .navbar  {
     border-bottom: 0.5px solid white;
-    padding-bottom: 25px;
-    padding-top: 25px;
+    padding-bottom: 5px;
+    padding-top: 5px;
     width:90%;
     margin: auto;
     color:white;
     //opacity: 0.80;
+    
 }
 
 .navbar-light .navbar-nav .nav-link{
@@ -26,3 +27,32 @@
     background-color:white;
     border-radius: 20px;
 }
+
+
+.dropdown-menu:before {
+    position: absolute;
+    top: -7px;
+    left: 38px; /* change for positioning */
+    
+  }
+  
+  .dropdown-menu:after {
+    position: absolute;
+    top: -6px;
+    left: 39px; /* change for positioning */
+    
+  }
+
+  .dropdown-menu{
+      border-radius: 20px;
+      border: 0rem;
+
+  }
+  
+  .dropdown-item{
+    color:#F88C98; 
+  }
+
+  .dropdown-item:hover{
+    border-radius: 20px;
+  }
