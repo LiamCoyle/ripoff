@@ -21,6 +21,8 @@ import { ProductService } from './services/product.service';
 import { AuthenticationService } from './services/helper/authenticate.service';
 import { LoginComponent } from './components/login/login.component';
 
+import { JwtInterceptor} from './interceptors/jwt.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,8 @@ import { LoginComponent } from './components/login/login.component';
   providers: [
     UserService,
     ProductService,
-    AuthenticationService
+    AuthenticationService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })

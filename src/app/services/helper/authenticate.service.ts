@@ -14,14 +14,6 @@ const endPoint = 'http://localhost:8080/';
 })
 export class AuthenticationService {
 
-  /*public isLoggedIn() : boolean {
-   
-    if(JSON.parse(localStorage.getItem('currentUser'))){
-      return true;
-    }else{
-      return false; 
-    }
-  }*/
 
   public getCurrentUser()  {
     return JSON.parse(localStorage.getItem('currentUser'));
@@ -33,9 +25,9 @@ export class AuthenticationService {
 
   constructor(private http:HttpClient) {}
 
-  public loginUser(mail, password) : Observable<any>{
+  public loginUser(mail : string, password : string) : Observable<any>{
     var obj = {'mail': mail, 'password': password};
-    return this.http.post(endPoint+'user/authenticate',obj)
+    return this.http.post(endPoint+'authenticate',obj)
     .pipe(map(user => {
       console.log(user);
       // login successful if there's a jwt token in the response
