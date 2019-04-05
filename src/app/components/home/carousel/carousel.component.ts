@@ -29,8 +29,8 @@ export class CarouselComponent implements OnInit, OnChanges {
     "use strict";
 
     // manual carousel controls
-    $('.next').click(function(){ $('.carousel').carousel('next');return false; });
-    $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
+   // $('.next').click(function(){ $('.carousel').carousel('next');return false; });
+   // $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
     
 })(jQuery);
     
