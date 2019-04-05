@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthenticationService} from 'src/app/services/helper/authenticate.service'
+import {AuthenticationService} from 'src/app/services/helper/authenticate.service';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-header',
@@ -13,6 +15,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.authService.getCurrentUser();
+    $(document).ready(function() {
+      $(".dropdown-toggle").dropdown();
+  });
   }
 
 }

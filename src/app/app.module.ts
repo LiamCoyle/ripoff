@@ -22,6 +22,7 @@ import { AuthenticationService } from './services/helper/authenticate.service';
 import { LoginComponent } from './components/login/login.component';
 
 import { JwtInterceptor} from './interceptors/jwt.interceptor';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { JwtInterceptor} from './interceptors/jwt.interceptor';
     CarouselComponent,
     SearchComponent,
     IntroductionComponent,
-    LoginComponent
+    LoginComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
