@@ -20,14 +20,14 @@ export class CarouselComponent implements OnInit, OnChanges {
   ngOnInit() {
     
     
-    (function($) {
-      "use strict";
-  
-      // manual carousel controls
-      $('.next').click(function(){ $('.carousel').carousel('next');return false; });
-      $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
-      
-  })(jQuery);
+   (function($) {
+    "use strict";
+
+    // manual carousel controls
+    $('.next').click(function(){ $('.carousel').carousel('next');return false; });
+    $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
+    
+})(jQuery);
     
   
     }
