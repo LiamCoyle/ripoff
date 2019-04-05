@@ -7,13 +7,17 @@
 
   <div class="row mb-3">
     <div class="col">
-        <input class="form-control form-control-lg shadow" type="search" placeholder="Rechercher un produit">
+        <input #searchInput (keyup.enter)="search(searchInput.value)" class="form-control form-control-lg shadow" type="search" placeholder="Rechercher un produit">
+        <button class="btn btn-primary" (click)="search(searchInput.value)"><i class="fas fa-search"></i></button>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class=" card col-3">
       <h5 class="card-title">Filter</h5>
+      <div *ngFor="let brand of brands">
+        {{brand.name}}
+      </div>
     </div>
 
     <div class="col-9">

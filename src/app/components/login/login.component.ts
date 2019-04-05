@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
 
   public login(mail, password){
     console.log(mail, password);
-    console.log(this.authService.loginUser(mail, password));
-    if(this.authService.loginUser(mail, password)){
+    console.log(this.authService.login(mail, password));
+    if(this.authService.login(mail, password)){
       this.router.navigate(['/home']);
     }
   }

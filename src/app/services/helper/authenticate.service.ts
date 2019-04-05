@@ -14,18 +14,13 @@ const endPoint = 'http://localhost:8080/';
 })
 export class AuthenticationService {
 
-
+  constructor(private http:HttpClient) {}
+  
   public getCurrentUser()  {
     return JSON.parse(localStorage.getItem('currentUser'));
   }
 
-  private deleteCurrentUser(){
-    localStorage.removeItem('currentUser');
-  }
-
-  constructor(private http:HttpClient) {}
-
-  public loginUser(mail : string, password : string) : Observable<any>{
+  public login(mail : string, password : string) : Observable<any>{
     var obj = {'mail': mail, 'password': password};
     return this.http.post(endPoint+'authenticate',obj)
     .pipe(map(user => {
@@ -43,6 +38,6 @@ export class AuthenticationService {
   }
 
   public logoutUser(){
-    this.deleteCurrentUser();
+    localStorage.removeItem('currentUser');
   }
 }

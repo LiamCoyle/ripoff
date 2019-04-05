@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { ProductService } from 'src/app/services/product.service';
 
 import * as $ from 'jquery';
@@ -25,14 +24,14 @@ export class CarouselComponent implements OnInit, OnChanges {
       console.log(data);
     });
     
-   (function($) {
+   /*(function($) {
     "use strict";
 
     // manual carousel controls
    // $('.next').click(function(){ $('.carousel').carousel('next');return false; });
    // $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
     
-})(jQuery);
+})(jQuery);*/
     
   
     }
