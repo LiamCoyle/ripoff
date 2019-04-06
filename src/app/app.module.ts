@@ -3,9 +3,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
-
-
+import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,14 +14,19 @@ import { CarouselComponent } from './components/home/carousel/carousel.component
 import { SearchComponent } from './components/home/search/search.component';
 import { IntroductionComponent } from './components/home/introduction/introduction.component';
 import { LoginComponent } from './components/login/login.component';
+import { CardComponent } from './components/card/card.component';
 
 import { UserService } from './services/user.service';
 import { ProductService } from './services/product.service';
 import { AuthenticationService } from './services/helper/authenticate.service';
 import { BrandService } from './services/brand.service';
+import { SiteService } from './services/site.service';
+import { ProductTypeService } from './services/product-type.service';
+import { CategoryService } from './services/category.service';
 
 import { JwtInterceptor} from './interceptors/jwt.interceptor';
-import { CardComponent } from './components/card/card.component';
+
+
 
 
 @NgModule({
@@ -42,6 +45,8 @@ import { CardComponent } from './components/card/card.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    Ng5SliderModule,
+    FormsModule
 
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
@@ -49,6 +54,9 @@ import { CardComponent } from './components/card/card.component';
     UserService,
     ProductService,
     BrandService,
+    SiteService,
+    ProductTypeService,
+    CategoryService,
     AuthenticationService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],

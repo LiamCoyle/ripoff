@@ -33,26 +33,13 @@
     position: absolute;
     top: -7px;
     left: 38px; /* change for positioning */
-    
-  }
+
+}
   
-  .dropdown-menu:after {
-    position: absolute;
-    top: -6px;
-    left: 39px; /* change for positioning */
-    
-  }
+.dropdown-menu:after {
+position: absolute;
+top: -6px;
+left: 39px; /* change for positioning */
 
-  .dropdown-menu{
-      border-radius: 20px;
-      border: 0rem;
+}
 
-  }
-  
-  .dropdown-item{
-    color:#F88C98; 
-  }
-
-  .dropdown-item:hover{
-    border-radius: 20px;
-  }

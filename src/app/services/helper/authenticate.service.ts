@@ -17,27 +17,27 @@ export class AuthenticationService {
   constructor(private http:HttpClient) {}
   
   public getCurrentUser()  {
-    return JSON.parse(localStorage.getItem('currentUser'));
+    return JSON.parse(localStorage.getItem('currentToken'));
   }
 
   public login(mail : string, password : string) : Observable<any>{
     var obj = {'mail': mail, 'password': password};
     return this.http.post(endPoint+'authenticate',obj)
-    .pipe(map(user => {
-      console.log(user);
+    .pipe(map(token => {
+      console.log(token);
       // login successful if there's a jwt token in the response
-      if (user) {
+      if (token) {
           // store user details and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          console.log(user);
+          localStorage.setItem('currentToken', JSON.stringify(token));
+          console.log(token);
           //this.currentUser = JSON.stringify(user);
       }
 
-      return user;
+      return token;
     }));
   }
 
   public logoutUser(){
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('currentToken');
   }
 }

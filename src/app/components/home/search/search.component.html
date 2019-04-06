@@ -5,34 +5,73 @@
     <hr>
   </div>
 
-  <div class="row mb-3">
-    <div class="col">
-        <input #searchInput (keyup.enter)="search(searchInput.value)" class="form-control form-control-lg shadow" type="search" placeholder="Rechercher un produit">
-        <button class="btn btn-primary" (click)="search(searchInput.value)"><i class="fas fa-search"></i></button>
-    </div>
+  <div class="row mb-5">
+    
+    <button class="col-1 btn btn-primary btn-rounded p-2" (click)="toggleShowFilters()">
+      <i *ngIf="!showFilters" class="fa fa-angle-double-down"></i>
+      <i *ngIf="showFilters" class="fa fa-angle-double-up"></i>
+    </button>
+    <div class="flex-grow-1 col-10">
+      <input #searchInput (keyup.enter)="search(searchInput.value)" class="form-control form-control-lg shadow" type="search" placeholder="Rechercher un produit">
+    </div>    
+    <!--<button class="btn btn-primary" (click)="search(searchInput.value)"><i class="fa fa-search"></i></button>-->
+    
   </div>
 
   <div class="row mb-3">
-    <div class=" card col-3">
-      <h5 class="card-title">Filter</h5>
-      <div *ngFor="let brand of brands">
-        {{brand.name}}
+    <div *ngIf="showFilters" class="card col-12 col-md-3 d-flex flex-column ">
+      
+      <button (click)="resetFilters()" class="btn btn-header mx-auto mb-3">
+          RESET
+      </button>
+      <div class="category">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let category of categories; index as i">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck{{i}}" [checked]="checkCategoryFilter(category)" (change)="toggleCategory(category)">
+                <label class="custom-control-label" for="customCheck{{i}}">{{category.name}}</label>
+              </div>
+          </li>
+        </ul>
       </div>
+      
+      <div class="dropdown w-100 ">
+        <button class=" w-100 btn btn-pink btn-outline dropdown-toggle " type="button" id="dropdownBrandButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selectionné des Marques
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownBrandButton">
+          <span class="dropdown-item" (click)="toggleBrand(brand)" *ngFor="let brand of brands">{{brand.name}}</span>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let brand of brandFilter">{{brand.name}}<i class="pointer fa fa-times cross-brand" (click)="toggleBrand(brand)"></i></li>
+      </ul>
+
+      <div class="dropdown  w-100">
+        <button class="w-100 btn btn-pink btn-outline dropdown-toggle" type="button" id="dropdownSiteButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selectionné des Sites
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownSiteButton">
+          <span class="dropdown-item" (click)="toggleSite(site)" *ngFor="let site of sites">{{site.name}}</span>
+        </div>
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let site of siteFilter">{{site.name}}<i class=" pointer fa fa-times cross-brand" (click)="toggleSite(site)"></i></li>
+      </ul>
+
+      <ng5-slider [(value)]="options.floor" [(highValue)]="options.ceil" [options]="options" (userChangeEnd)="applyFilters($event)"></ng5-slider>
+
+      
     </div>
 
-    <div class="col-9">
+    <div [ngClass]="{'col-md-9 ': showFilters, 'col-md-12': !showFilters}" class="col-12">
       <div class="row">
-        <div class="card col-4" *ngFor ="let product of products">
-          <img class="card-img-top" src="" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">{{product.name}}</p>
-            <button class="btn btn-primary">{{product.price}}</button>
-          </div>
+        <div class="card col-md-4 col-12 mb-4 " *ngFor ="let product of products">
+          <app-card [product]="product"></app-card>
         </div>
       </div>
     </div>
 
   </div>
-  <app-card></app-card>
+  
 </div>
