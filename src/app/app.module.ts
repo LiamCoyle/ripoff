@@ -4,6 +4,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,7 +47,8 @@ import { JwtInterceptor} from './interceptors/jwt.interceptor';
     HttpClientModule,
     AppRoutingModule,
     Ng5SliderModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
 
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

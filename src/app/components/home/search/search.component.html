@@ -66,12 +66,12 @@
 
     <div [ngClass]="{'col-md-9 ': showFilters, 'col-md-12': !showFilters}" class="col-12">
       <div class="row">
-        <div class="card col-md-4 col-12 mb-4 " *ngFor ="let product of products">
+        <div class="card col-md-4 col-12 mb-4 " *ngFor ="let product of products | paginate: { itemsPerPage: 10, currentPage: p }">
           <app-card [product]="product"></app-card>
         </div>
       </div>
+      
     </div>
-
   </div>
-  
+  <pagination-controls class="my-pagination" (pageChange)="p = $event" nextLabel="Suivant" previousLabel="Précédent"></pagination-controls>
 </div>
