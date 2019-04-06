@@ -26,6 +26,7 @@ import { ProductTypeService } from './services/product-type.service';
 import { CategoryService } from './services/category.service';
 
 import { JwtInterceptor} from './interceptors/jwt.interceptor';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 
@@ -40,7 +41,8 @@ import { JwtInterceptor} from './interceptors/jwt.interceptor';
     SearchComponent,
     IntroductionComponent,
     LoginComponent,
-    CardComponent
+    CardComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

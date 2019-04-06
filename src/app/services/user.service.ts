@@ -16,8 +16,11 @@ export class UserService {
   constructor(private http:HttpClient) {}
 
   getUsers() : Observable<any>{
-    console.log(this.http.get(endPoint+'user'));
     return this.http.get(endPoint+'user');
+  }
+
+  getUser(id) : Observable<any>{
+    return this.http.get(endPoint+'user/'+id);
   }
 
   createUser(input) : Observable<any>{
