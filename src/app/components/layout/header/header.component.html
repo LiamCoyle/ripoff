@@ -26,23 +26,30 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/aPropos" href="#">A Propos</a>
       </li>
+      <li *ngIf="currentUser== null" class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']" href="#">Se connecter</a>
+      </li>
+      <li *ngIf="currentUser" class="nav-item">
+        <a class="nav-link" (click)="logout()" href="#">se Déconnecter</a>
+      </li>
      
       
       <li class="nav-item"><a class="nav-link" href="#">Partenaire</a></li>
       <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      <li *ngIf="!currentUser" class="nav-item"><a class="nav-link" [routerLink]="['/login']"> Sign In</a></li>
-      <li *ngIf="currentUser"  class="nav-item"><a class="nav-link" [routerLink]="['/logout']"  > Sign Out</a></li>
         
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  
           <i class="fa fa-user"></i>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-          <a class="dropdown-item" href="#">Voir les alertes</a>
-          <a class="dropdown-item" href="#">Modification du compte</a>
+        <div *ngIf="currentUser" class="dropdown-menu"   aria-labelledby="navbarDropdown2">
+          <span class="dropdown-item" href="#">Voir les alertes</span>
+          <span class="dropdown-item" href="#">Modification du compte</span>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Déconnexion</a>
+          <span class="dropdown-item" href="#" (click)="logout()">Déconnexion</span>
+        </div>
+        <div *ngIf="currentUser == null" class="dropdown-menu"   aria-labelledby="navbarDropdown2">
+          <a class="dropdown-item" [routerLink]="['/login']" >Se connecter</a>
         </div>
       </li>
 

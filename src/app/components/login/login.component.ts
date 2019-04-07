@@ -16,10 +16,13 @@ export class LoginComponent implements OnInit {
 
   public login(mail, password){
     console.log(mail, password);
-    console.log(this.authService.login(mail, password));
-    if(this.authService.login(mail, password)){
-      this.router.navigate(['/home']);
-    }
+    this.authService.login(mail, password).subscribe(token =>{
+      console.log("login component", token);
+      if(token){
+        this.router.navigate(['/dashboard']);
+      }
+    });
+    
   }
 
 }

@@ -1,0 +1,32 @@
+.btn{
+    &.btn-rounded{
+        border-radius:10rem;
+    }
+    &.btn-header{
+    
+        background-color:lightgray;
+        color:white;
+        border-radius: 20px;
+        padding:10px;
+        text-align:center;
+        z-index:99;
+        width:130px;
+        margin-top:-20px;
+        position: relative;
+    }
+
+    &.btn-pink{
+        border-color:#F88C98;
+        color:lightgray;
+    }
+
+    &.btn-outline{
+        background-color: white;
+    }
+}
+.cross-brand{
+    position: absolute;
+    right : 5px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
