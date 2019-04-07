@@ -15,10 +15,6 @@ export class HeaderComponent implements OnInit {
   constructor(private authService : AuthenticationService, private router : Router) { }
 
   ngOnInit() {
-    this.currentUser = this.authService.getCurrentUser();
-    $(document).ready(function() {
-      //$(".dropdown-toggle").dropdown();
-  });
     this.authService.currentUserSubject.subscribe(user => {
       console.log("header component subscribe", user);  
       this.currentUser = user;
