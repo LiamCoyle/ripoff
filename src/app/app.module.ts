@@ -27,6 +27,7 @@ import { CategoryService } from './services/category.service';
 
 import { JwtInterceptor} from './interceptors/jwt.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 
@@ -42,7 +43,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     IntroductionComponent,
     LoginComponent,
     CardComponent,
-    DashboardComponent
+    DashboardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

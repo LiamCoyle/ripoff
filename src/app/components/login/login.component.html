@@ -9,10 +9,11 @@
           <input type="password" id="inputPassword" #password class="form-control" placeholder="Password" required>
           <div id="remember" class="checkbox">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="remember-me">Remember me
             </label>
           </div>
-          <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="login(mail.value, password.value)">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="login(mail.value, password.value)">Se connecter</button>
+          <a class="" (click)="signup()">Vous n'avez pas de compte ? S'incrire</a>
       
       <a href="#" class="forgot-password">
           Mot de passe oublié

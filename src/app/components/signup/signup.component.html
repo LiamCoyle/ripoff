@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="card card-container">
+    <input type="text" id="inputEmail" #mail class="form-control" placeholder="Email address" required autofocus> <!--email-->
+    <input type="password" id="inputPassword" #password class="form-control" placeholder="Password" required>
+    <input type="test" id="inputName" #name class="form-control" placeholder="Nom" required>
+    <button class="btn btn-lg btn-primary btn-block btn-signup" (click)="signup(mail.value, password.value, name.value)">S'inscrire</button>
+  </div><!-- /card-container -->
+</div>

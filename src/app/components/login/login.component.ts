@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/helper/authenticate.service';
-import {Router} from "@angular/router"
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-login',
@@ -21,8 +21,11 @@ export class LoginComponent implements OnInit {
       if(token){
         this.router.navigate(['/dashboard']);
       }
-    });
-    
+    }); 
+  }
+
+  public signup(mail, password){
+    this.router.navigate(['/signup']);
   }
 
 }
