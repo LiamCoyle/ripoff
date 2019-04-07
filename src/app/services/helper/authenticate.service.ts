@@ -5,6 +5,7 @@ import { map, catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject } from 'rxjs';
 import { UserService } from '../user.service';
 import * as jwt_decode from "jwt-decode";
+import { UrlHandlingStrategy } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -26,9 +27,24 @@ export class AuthenticationService {
     return this._userSubject.value; 
   }
 
+
+  public getUserFromToken(token, callback){
+    let decodedToken = jwt_decode(token);
+    console.log("decoded token", decodedToken);
+    if(decodedToken.id){
+      this.userService.getUser(decodedToken.id).subscribe(user=>{
+        console.log("find user by id in token", user);
+        return callback(user);
+      });
+    }else{
+      return callback(null);
+    }
+    
+  }
+
   public get currentUserSubject(): any {
     return this._userSubject;
-}
+  }
 
   public login(mail : string, password : string) : Observable<any>{
     var obj = {'mail': mail, 'password': password};

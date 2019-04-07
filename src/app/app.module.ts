@@ -24,10 +24,12 @@ import { BrandService } from './services/brand.service';
 import { SiteService } from './services/site.service';
 import { ProductTypeService } from './services/product-type.service';
 import { CategoryService } from './services/category.service';
+import { AlerteService } from './services/alerte.service';
 
 import { JwtInterceptor} from './interceptors/jwt.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AlerteComponent } from './components/dashboard/alerte/alerte.component';
 
 
 
@@ -44,7 +46,8 @@ import { SignupComponent } from './components/signup/signup.component';
     LoginComponent,
     CardComponent,
     DashboardComponent,
-    SignupComponent
+    SignupComponent,
+    AlerteComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +67,7 @@ import { SignupComponent } from './components/signup/signup.component';
     ProductTypeService,
     CategoryService,
     AuthenticationService,
+    AlerteService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]

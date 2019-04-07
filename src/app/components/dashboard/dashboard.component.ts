@@ -8,20 +8,15 @@ import { AuthenticationService } from 'src/app/services/helper/authenticate.serv
 })
 export class DashboardComponent implements OnInit {
 
-  users : any[] = [];
   user : any;
 
   constructor(private userService: UserService, private authService: AuthenticationService) { }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(users=>{
-      console.log("users", users)
-      this.users = users;
-    });
-
     this.authService.currentUserSubject.subscribe(data => {
-      this.user = data;
+      this.authService.getUserFromToken(data, user=>{
+        this.user= user;
+      });
     });
   }
-
 }
