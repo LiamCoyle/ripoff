@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.authService.getCurrentUser();
     $(document).ready(function() {
-      $(".dropdown-toggle").dropdown();
+      //$(".dropdown-toggle").dropdown();
   });
   }
 
