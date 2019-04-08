@@ -32,8 +32,14 @@ export class AlerteComponent implements OnInit {
       this.authService.getUserFromToken(data, user=>{
         this.user= user;
         this.alerteService.getAlertesForUser(user).subscribe(alertes =>{
-          console.log("user alertes",alertes);
-          this.alertes = alertes;
+          this.productTypeService.getProductTypes().subscribe(productTypes => {
+            console.log("user alertes",alertes);
+            this.productTypes = productTypes;
+            alertes.forEach((alerte,index)=> {
+              alertes[index].productTypeName = this.productTypes.find(x=>{return x.id == alerte.idProductType}).name;
+              this.alertes = alertes;
+            });
+          })
         })
       });
     });

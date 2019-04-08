@@ -1,4 +1,9 @@
-<div *ngFor="let alerte of alertes">{{alerte.name}}</div>
+<div *ngFor="let alerte of alertes"> <!--modifié ici avec card alerte-->
+  {{alerte | json}}
+  {{alerte.name}}
+  {{alerte.productTypeName}}
+  {{alerte.maxPrice}}
+</div>
 
 
 <div class="d-flex">

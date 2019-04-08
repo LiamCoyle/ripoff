@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng5SliderModule } from 'ng5-slider';
 import {NgxPaginationModule} from 'ngx-pagination';
 
@@ -30,6 +30,7 @@ import { JwtInterceptor} from './interceptors/jwt.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AlerteComponent } from './components/dashboard/alerte/alerte.component';
+import { AccountComponent } from './components/account/account.component';
 
 
 
@@ -47,7 +48,8 @@ import { AlerteComponent } from './components/dashboard/alerte/alerte.component'
     CardComponent,
     DashboardComponent,
     SignupComponent,
-    AlerteComponent
+    AlerteComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { AlerteComponent } from './components/dashboard/alerte/alerte.component'
     AppRoutingModule,
     Ng5SliderModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
 
   ],
   schemas: [ NO_ERRORS_SCHEMA ],

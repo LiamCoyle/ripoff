@@ -27,8 +27,8 @@ export class UserService {
     return this.http.post(endPoint+'user', input);
   }
 
-  updateUser(input) : Observable<any>{
-    return this.http.put(endPoint+'user', input);
+  updateUser(id, input) : Observable<any>{
+    return this.http.put(endPoint+'user/'+id, input);
   }
 
   deleteUser(input) : Observable<any>{
