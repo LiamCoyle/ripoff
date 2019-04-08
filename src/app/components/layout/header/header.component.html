@@ -36,10 +36,10 @@
           <i class="fa fa-user"></i>
         </a>
         <div  class="dropdown-menu"   aria-labelledby="navbarDropdown2">
-          <span *ngIf="currentUser" class="dropdown-item" href="#">Voir les alertes</span>
-          <span  *ngIf="currentUser"class="dropdown-item" href="#">Modification du compte</span>
+          <a *ngIf="currentUser" class="dropdown-item" [routerLink]="['/dashboard']" href="#">Voir les alertes</a>
+          <a  *ngIf="currentUser"class="dropdown-item" href="#">Modification du compte</a>
           <div  *ngIf="currentUser" class="dropdown-divider"></div>
-          <span *ngIf="currentUser" class="dropdown-item" href="#" (click)="logout()">Déconnexion</span>
+          <a *ngIf="currentUser" class="dropdown-item" href="#" (click)="logout()">Déconnexion</a>
           <a *ngIf="currentUser == null" class="dropdown-item" [routerLink]="['/login']" >Se connecter</a>
         </div>
       </li>
