@@ -31,6 +31,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AlerteComponent } from './components/dashboard/alerte/alerte.component';
 import { AccountComponent } from './components/account/account.component';
+import { CategoryComponent } from './components/category/category.component';
+import { ProductTypeComponent } from './components/product-type/product-type.component';
 
 
 
@@ -49,7 +51,9 @@ import { AccountComponent } from './components/account/account.component';
     DashboardComponent,
     SignupComponent,
     AlerteComponent,
-    AccountComponent
+    AccountComponent,
+    CategoryComponent,
+    ProductTypeComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,10 @@ export class BrandService {
     return this.http.get(endPoint+'brand');
   }
 
+  getBrand(idBrand): Observable<any>{
+    return this.http.get(endPoint+'brand/'+idBrand);
+  }
+
   createBrand(input) : Observable<any>{
     return this.http.post(endPoint+'brand', input);
   }

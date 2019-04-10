@@ -19,7 +19,7 @@
             Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
+            <a *ngFor="let category of categories" class="dropdown-item" [routerLink]="['/category', category.id]" href="#">{{category.name}}</a>
           </div>
       </li>
 
@@ -38,7 +38,7 @@
         <div  class="dropdown-menu"   aria-labelledby="navbarDropdown2">
           <a *ngIf="currentUser" class="dropdown-item" [routerLink]="['/dashboard']" href="#">Voir les alertes</a>
           <a  *ngIf="currentUser"class="dropdown-item" [routerLink]="['/account']" href="#">Modification du compte</a>
-          <div  *ngIf="currentUser" class="dropdown-divider"></div>
+          <div *ngIf="currentUser" class="dropdown-divider"></div>
           <a *ngIf="currentUser" class="dropdown-item" href="#" (click)="logout()">Déconnexion</a>
           <a *ngIf="currentUser == null" class="dropdown-item" [routerLink]="['/login']" >Se connecter</a>
         </div>

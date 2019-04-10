@@ -21,6 +21,10 @@ export class CategoryService {
     return this.http.get(endPoint+'category');
   }
 
+  getCategory(id) : Observable<any>{
+    return this.http.get(endPoint+'category/'+id);
+  }
+
   createCategory(input) : Observable<any>{
     return this.http.post(endPoint+'category', input);
   }

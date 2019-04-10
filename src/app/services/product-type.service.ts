@@ -20,6 +20,10 @@ export class ProductTypeService {
     return this.http.get(endPoint+'productType');
   }
 
+  getProductTypesForCategory(idCategory) : Observable<any>{
+    return this.http.get(endPoint+'productType/category/'+idCategory);
+  }
+
   createProductType(input) : Observable<any>{
     return this.http.post(endPoint+'productType', input);
   }

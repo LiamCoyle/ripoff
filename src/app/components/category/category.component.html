@@ -1,0 +1,7 @@
+<div class="producTypesContainer">
+  <div *ngFor="let productType of productTypes">
+    {{productType.name}}
+    {{productType.nameBrand}}
+    <a href="#" [routerLink]="['/productType', productType.id]">Voir les Deals</a>
+  </div>
+</div>

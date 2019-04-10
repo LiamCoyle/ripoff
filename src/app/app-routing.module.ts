@@ -6,12 +6,16 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SignupComponent } from './components/signup/signup.component';
 import { AccountComponent } from './components/account/account.component';
+import { CategoryComponent } from './components/category/category.component';
+import { ProductTypeComponent } from './components/product-type/product-type.component';
 
 const routes: Routes = [
 
   { path: '',   component: HomeComponent },
   { path: 'login',   component: LoginComponent },
   { path: 'signup', component: SignupComponent},
+  { path: 'category/:id', component: CategoryComponent},
+  { path: 'productType/:id', component: ProductTypeComponent},
   { path: 'dashboard',
     component: DashboardComponent,
     canActivate : [AuthGuard]
