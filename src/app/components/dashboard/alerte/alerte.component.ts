@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/helper/authenticate.service';
 import { AlerteService } from '../../../services/alerte.service';
 import { CategoryService } from 'src/app/services/category.service';
+import { BrandService } from 'src/app/services/brand.service';
 import { ProductTypeService } from 'src/app/services/product-type.service';
-import { componentFactoryName } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-alerte',
@@ -16,6 +17,7 @@ export class AlerteComponent implements OnInit {
   alertes: any[];
   categories: any[];
   productTypes : any[];
+  brands : any[];
   displayedProductTypes : any [];
   selectedCategory : any;
   selectedProductType : any;
@@ -24,6 +26,7 @@ export class AlerteComponent implements OnInit {
     private authService  : AuthenticationService, 
     private alerteService : AlerteService,
     private categoryService : CategoryService,
+    private brandService : BrandService,
     private productTypeService : ProductTypeService
     ) { }
 
@@ -33,13 +36,20 @@ export class AlerteComponent implements OnInit {
         this.user= user;
         this.alerteService.getAlertesForUser(user).subscribe(alertes =>{
           this.productTypeService.getProductTypes().subscribe(productTypes => {
-            console.log("user alertes",alertes);
-            this.productTypes = productTypes;
-            alertes.forEach((alerte,index)=> {
-              alertes[index].productTypeName = this.productTypes.find(x=>{return x.id == alerte.idProductType}).name;
-              alertes[index].productTypeImg = this.productTypes.find(x=>{return x.id == alerte.idProductType}).img;
-              this.alertes = alertes;
-            });
+            this.brandService.getBrands().subscribe(brands=>{
+              this.brands = brands;
+              console.log("user alertes",alertes);
+              this.productTypes = productTypes;
+              alertes.forEach((alerte,index)=> {
+                let productTypeObj = this.productTypes.find(x=>{return x.id == alerte.idProductType});
+                console.log("productTypeObj", productTypeObj);
+                alertes[index].productTypeName = productTypeObj.name;
+                alertes[index].productTypeImg = productTypeObj.img;
+                alertes[index].brandName = this.brands.find(x=>{return x.id == productTypeObj.idBrand}).name;
+                this.alertes = alertes;
+              });
+            })
+            
           })
         })
       });
