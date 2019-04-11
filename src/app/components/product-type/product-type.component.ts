@@ -41,6 +41,7 @@ export class ProductTypeComponent implements OnInit {
           let categoryObj = this._categories.find(x=> {return x.id == productTypeObj.idCategory});
           
           product.name = productTypeObj.name;
+          product.img = productTypeObj.img;
           product.idBrand = brandObj.id;
           product.nameBrand = brandObj.name;
           product.nameSite = siteObj.name;
