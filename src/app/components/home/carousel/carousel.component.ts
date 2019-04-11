@@ -49,6 +49,7 @@ export class CarouselComponent implements OnInit, OnChanges {
         let categoryObj = this._categories.find(x=> {return x.id == productTypeObj.idCategory});
         
         product.name = productTypeObj.name;
+        product.img = productTypeObj.img;
         product.idBrand = brandObj.id;
         product.nameBrand = brandObj.name;
         product.nameSite = siteObj.name;
@@ -64,9 +65,7 @@ export class CarouselComponent implements OnInit, OnChanges {
           if(!this.displayedProducts.includes(item)){
             this.displayedProducts.push(item);
           }
-
         }
-        
       }
       
     });

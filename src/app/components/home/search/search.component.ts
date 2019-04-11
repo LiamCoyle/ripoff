@@ -57,6 +57,7 @@ export class SearchComponent implements OnInit {
         let categoryObj = this._categories.find(x=> {return x.id == productTypeObj.idCategory});
         
         this._products[index].name = productTypeObj.name;
+        this._products[index].img = productTypeObj.img;
         this._products[index].idBrand = brandObj.id;
         this._products[index].nameBrand = brandObj.name;
         this._products[index].nameSite = siteObj.name;

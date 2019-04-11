@@ -37,6 +37,7 @@ export class AlerteComponent implements OnInit {
             this.productTypes = productTypes;
             alertes.forEach((alerte,index)=> {
               alertes[index].productTypeName = this.productTypes.find(x=>{return x.id == alerte.idProductType}).name;
+              alertes[index].productTypeImg = this.productTypes.find(x=>{return x.id == alerte.idProductType}).img;
               this.alertes = alertes;
             });
           })
