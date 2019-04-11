@@ -38,3 +38,58 @@ hr {
 .shadow{
     box-shadow: 0px 0px 77px -5px rgba(0,0,0,0.75);
 }
+
+.customCard{
+    
+    border-radius:20px;
+    z-index:1;
+    position: relative;
+    font-family: 'Roboto:300', sans-serif;
+}
+
+.cardHeader{
+    background-color:pink;
+    color : white;
+    border-radius: 20px;
+    padding:10px;
+    text-align:center;
+    width:130px;
+    z-index:99;
+    margin:auto;
+    //margin-top:-20px;
+    top: 20px;
+    position: relative;
+    
+}
+
+
+.mainCard{
+    width:80%;
+    margin:auto;
+}
+
+.cardImg img{
+    width:100%;
+    border-radius:20px;
+}
+
+.cardText{
+    text-align:center;
+    margin-top:20px;
+}
+
+.site{
+    font-family: 'Roboto:300', sans-serif;
+    color:grey;
+    font-weight: lighter;
+}
+.name{
+    font-family: 'Roboto400', sans-serif;
+    font-weight: bold;
+}
+.price{
+    font-family: 'Roboto500', sans-serif;
+    color:pink;
+    font-size:1.5em;
+
+}

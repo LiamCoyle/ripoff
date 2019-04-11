@@ -1,22 +1,63 @@
-<div class="container">
-  <div class="card card-container">
-      <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+<!--<div class="container">
+  <div class="card card-container login">
       <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
       <p id="profile-name" class="profile-name-card"></p>
       
           <span id="reauth-email" class="reauth-email"></span>
-          <input type="text" id="inputEmail" #mail class="form-control" placeholder="Email address" required autofocus> <!--email-->
+          <input type="text" id="inputEmail" #mail class="form-control" placeholder="Email address" required autofocus> 
           <input type="password" id="inputPassword" #password class="form-control" placeholder="Password" required>
           <div id="remember" class="checkbox">
             <label>
                 <input type="checkbox" value="remember-me">Remember me
             </label>
           </div>
-          <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="login(mail.value, password.value)">Se connecter</button>
+          <button class="btn btn-login btn-block btn-signin" (click)="login(mail.value, password.value)">Se connecter</button>
           <a class="" (click)="signup()">Vous n'avez pas de compte ? S'incrire</a>
       
       <a href="#" class="forgot-password">
           Mot de passe oublié
       </a>
-  </div><!-- /card-container -->
+  </div>
+</div>-->
+
+
+<div class="limiter">
+  <div class="wrap-login100" style="margin: auto;margin-top: 20px;">
+    <form class="login100-form validate-form">
+    
+      <span class="login100-form-title p-b-34 p-t-27">
+        Log in
+      </span>
+
+      <div class="wrap-input100 validate-input" data-validate = "Enter username">
+        <input class="input100" #mail type="text" name="username" placeholder="Username">
+        <span class="focus-input100" data-placeholder="&#xf207;"></span>
+      </div>
+
+      <div class="wrap-input100 validate-input" data-validate="Enter password">
+        <input class="input100" #password type="password" name="pass" placeholder="Password">
+        <span class="focus-input100" data-placeholder="&#xf191;"></span>
+      </div>
+
+      <div class="contact100-form-checkbox">
+        <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+        <label class="label-checkbox100" for="ckb1">
+          Remember me
+        </label>
+      </div>
+
+      <div class="container-login100-form-btn">
+        <button class="login100-form-btn" (click)="login(mail.value, password.value)">
+          Login
+        </button>
+      </div>
+
+      <div class="text-center p-t-90">
+        <a class="txt1" href="#" (click)="signup()">
+          S'inscrire?
+        </a>
+      </div>
+    </form>
+  </div>
+
 </div>
