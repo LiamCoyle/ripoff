@@ -115,43 +115,7 @@
       </div>
       <div class="container p-t-0 m-t-2 carousel-inner">
           <div class="row row-equal carousel-item active m-t-0">
-              <div class="col-md-4">
-                <div class="customCard">
-                  <div class="cardHeader">
-                      EN STOCK
-                  </div>
-                  <div class="mainCard">
-                      <div class="cardImg">
-                          <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/1537351633.48.jpg">
-                      </div>
-                      <div class="cardText">
-                          <span class="site">{{product.nameSite}}</span><br>
-                          <span class="brand">{{product.nameBrand}}</span><br>
-                          <span class="name">{{product.name}}</span><br>
-                          <span class="price">{{product.price}}</span>
-                      </div>
-                  </div>
-              </div>
-              </div>
-              <div class="col-md-4">
-                <div class="customCard">
-                  <div class="cardHeader">
-                      EN STOCK
-                  </div>
-                  <div class="mainCard">
-                      <div class="cardImg">
-                          <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/1537351633.48.jpg">
-                      </div>
-                      <div class="cardText">
-                          <span class="site">{{product.nameSite}}</span><br>
-                          <span class="brand">{{product.nameBrand}}</span><br>
-                          <span class="name">{{product.name}}</span><br>
-                          <span class="price">{{product.price}}</span>
-                      </div>
-                  </div>
-              </div>
-              </div>
-              <div class="col-md-4">
+              <div class="col-md-4" *ngFor="let product of displayedProducts">
                 <div class="customCard">
                   <div class="cardHeader">
                       EN STOCK
@@ -171,7 +135,7 @@
               </div>
           </div>
           <div class="row row-equal carousel-item m-t-0">
-              <div class="col-md-4">
+              <div class="col-md-4" *ngFor="let product of displayedProducts">
                 <div class="customCard">
                   <div class="cardHeader">
                       EN STOCK
@@ -189,42 +153,7 @@
                   </div>
               </div>
               </div>
-              <div class="col-md-4">
-                <div class="customCard">
-                  <div class="cardHeader">
-                      EN STOCK
-                  </div>
-                  <div class="mainCard">
-                      <div class="cardImg">
-                          <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/1537351633.48.jpg">
-                      </div>
-                      <div class="cardText">
-                          <span class="site">{{product.nameSite}}</span><br>
-                          <span class="brand">{{product.nameBrand}}</span><br>
-                          <span class="name">{{product.name}}</span><br>
-                          <span class="price">{{product.price}}</span>
-                      </div>
-                  </div>
-              </div>
-              </div>
-              <div class="col-md-4 fadeIn wow">
-                <div class="customCard">
-                  <div class="cardHeader">
-                      EN STOCK
-                  </div>
-                  <div class="mainCard">
-                      <div class="cardImg">
-                          <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/1537351633.48.jpg">
-                      </div>
-                      <div class="cardText">
-                          <span class="site">{{product.nameSite}}</span><br>
-                          <span class="brand">{{product.nameBrand}}</span><br>
-                          <span class="name">{{product.name}}</span><br>
-                          <span class="price">{{product.price}}</span>
-                      </div>
-                  </div>
-              </div>
-              </div>
+
               
           </div>
       </div>
