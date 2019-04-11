@@ -1,7 +1,21 @@
-<div class="producTypesContainer">
-  <div *ngFor="let productType of productTypes">
-    {{productType.name}}
-    {{productType.nameBrand}}
-    <a href="#" [routerLink]="['/productType', productType.id]">Voir les Deals</a>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let productType of productTypes" class="customCard col-md-4">
+      
+          <div class="cardHeader">
+              DISPONIBLE
+          </div>
+          <div class="mainCard">
+              <div class="cardImg">
+                  <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/1537351633.48.jpg">
+              </div>
+              <div class="cardText">
+                  <span class="site">{{productType.name}}</span><br>
+                  <span class="brand">{{productType.nameBrand}}</span><br>
+                  <a href="#" [routerLink]="['/productType', productType.id]" style="color:pink; ">Voir les Deals</a><br>
+              </div>
+          </div>
+      
+    </div>
   </div>
 </div>

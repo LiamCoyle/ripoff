@@ -1,35 +1,49 @@
-<div *ngFor="let alerte of alertes"> <!--modifié ici avec card alerte-->
-  {{alerte | json}}
-  {{alerte.name}}
-  {{alerte.productTypeName}}
-  {{alerte.maxPrice}}
+
+<div class="container" >
+  <h3 class="alerteTitle">Créer une alerte</h3>
+  <div class="d-flex" style="margin:20px;">
+    <input type="text"  placeholder="Nom" #name class="form-control">
+    <div class="dropdown">
+      <button class="btn btn-pink btn-outline dropdown-toggle " type="button" id="dropdownBrandButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span *ngIf="!selectedCategory">Catégorie à surveiller</span>
+        <span *ngIf="selectedCategory">{{selectedCategory.name}}</span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownBrandButton">
+        <span class="dropdown-item" (click)="selectCategory(category)" *ngFor="let category of categories">{{category.name}}</span>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button [disabled]="!selectedCategory" class="btn btn-pink btn-outline dropdown-toggle " type="button" id="dropdownBrandButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span *ngIf="!selectedProductType">Produit à surveiller</span>
+        <span *ngIf="selectedProductType">{{selectedProductType.name}}</span>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownBrandButton">
+        <span class="dropdown-item" (click)="selectProductType(productType)" *ngFor="let productType of displayedProductTypes">{{productType.name}}</span>
+      </div>
+    </div>
+
+    <input type="number" [disabled]="!selectedProductType" placeholder="Prix maximum d'alerte" #maxPrice class="form-control">
+    
+
+    <button class="btn btn-pink" (click)="createAlerte(name.value, maxPrice.value)">Créé une alerte</button>
+  </div>
 </div>
 
 
-<div class="d-flex">
-  <input type="text"  placeholder="Nom d'alerte" #name class="form-control">
-  <div class="dropdown">
-    <button class="btn btn-pink btn-outline dropdown-toggle " type="button" id="dropdownBrandButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span *ngIf="!selectedCategory">Catégorie à surveiller</span>
-      <span *ngIf="selectedCategory">{{selectedCategory.name}}</span>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownBrandButton">
-      <span class="dropdown-item" (click)="selectCategory(category)" *ngFor="let category of categories">{{category.name}}</span>
+<div class="container">
+<h3 class="alerteTitle" >Mes alertes</h3>
+    <div *ngFor="let alerte of alertes"> <!--modifié ici avec card alerte-->  
+      <div class="card col-sm-12 col-md-12 col-lg-12 px-0" style="margin-bottom: 10px;">
+          <h5 class="card-header">Alerte :  {{alerte.name }}</h5>
+          <div class="card-body">
+            <div style="position:relative;float:left;">
+              <h5 class="card-title" style="margin-bottom: 0rem;">{{alerte.productTypeName}}</h5>
+              <p class="card-text marque">{{alerte.brandName}}</p>
+              <p class="card-text price">{{alerte.maxPrice}} euros</p>
+            </div>
+            <a href="#" class="btn btn-danger" style="float:right;position:relative;top: 60px;">Supprimer alerte </a>
+          </div>
+        </div>
     </div>
   </div>
-
-  <div class="dropdown">
-    <button [disabled]="!selectedCategory" class="btn btn-pink btn-outline dropdown-toggle " type="button" id="dropdownBrandButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <span *ngIf="!selectedProductType">Produit à surveiller</span>
-      <span *ngIf="selectedProductType">{{selectedProductType.name}}</span>
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownBrandButton">
-      <span class="dropdown-item" (click)="selectProductType(productType)" *ngFor="let productType of displayedProductTypes">{{productType.name}}</span>
-    </div>
-  </div>
-
-  <input type="number" [disabled]="!selectedProductType" placeholder="Prix maximum d'alerte" #maxPrice class="form-control">
-  
-
-  <button class="btn btn-outline" (click)="createAlerte(name.value, maxPrice.value)">Créé une alerte</button>
-</div>
