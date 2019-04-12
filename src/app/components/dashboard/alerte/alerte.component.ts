@@ -77,7 +77,15 @@ export class AlerteComponent implements OnInit {
       console.log("response create alerte", data);
       this.alerteService.getAlertesForUser(this.user).subscribe(alertes =>{
         console.log("user alertes",alertes);
-        this.alertes = alertes;
+        alertes.forEach((alerte,index)=> {
+          let productTypeObj = this.productTypes.find(x=>{return x.id == alerte.idProductType});
+          console.log("productTypeObj", productTypeObj);
+          alertes[index].productTypeName = productTypeObj.name;
+          alertes[index].productTypeImg = productTypeObj.img;
+          alertes[index].brandName = this.brands.find(x=>{return x.id == productTypeObj.idBrand}).name;
+          this.alertes = alertes;
+        });
+        
       })
     });
 
@@ -89,7 +97,14 @@ export class AlerteComponent implements OnInit {
       console.log("response delete alerte", data);
       this.alerteService.getAlertesForUser(this.user).subscribe(alertes =>{
         console.log("user alertes",alertes);
-        this.alertes = alertes;
+        alertes.forEach((alerte,index)=> {
+          let productTypeObj = this.productTypes.find(x=>{return x.id == alerte.idProductType});
+          console.log("productTypeObj", productTypeObj);
+          alertes[index].productTypeName = productTypeObj.name;
+          alertes[index].productTypeImg = productTypeObj.img;
+          alertes[index].brandName = this.brands.find(x=>{return x.id == productTypeObj.idBrand}).name;
+          this.alertes = alertes;
+        });
       })
     });
   }
@@ -100,7 +115,14 @@ export class AlerteComponent implements OnInit {
       console.log("response delete alerte", data);
       this.alerteService.getAlertesForUser(this.user).subscribe(alertes =>{
         console.log("user alertes",alertes);
-        this.alertes = alertes;
+        alertes.forEach((alerte,index)=> {
+          let productTypeObj = this.productTypes.find(x=>{return x.id == alerte.idProductType});
+          console.log("productTypeObj", productTypeObj);
+          alertes[index].productTypeName = productTypeObj.name;
+          alertes[index].productTypeImg = productTypeObj.img;
+          alertes[index].brandName = this.brands.find(x=>{return x.id == productTypeObj.idBrand}).name;
+          this.alertes = alertes;
+        });
       })
     });
   }

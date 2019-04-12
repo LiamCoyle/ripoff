@@ -34,7 +34,7 @@ export class AlerteService {
   }
 
   deleteAlerte(input) : Observable<any>{
-    return this.http.delete(endPoint+'alerte', input);
+    return this.http.delete(endPoint+'alerte/'+input.id);
   }
 
 

@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     }); 
   }
 
-  public signup(mail, password){
+  public signup(){
     this.router.navigate(['/signup']);
   }
 

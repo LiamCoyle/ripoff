@@ -42,7 +42,7 @@
               <p class="card-text marque">{{alerte.brandName}}</p>
               <p class="card-text price">{{alerte.maxPrice}} euros</p>
             </div>
-            <a href="#" class="btn btn-danger" style="float:right;position:relative;top: 60px;">Supprimer alerte </a>
+            <button class="btn btn-danger" (click)="deleteAlerte(alerte)" style="float:right;position:relative;top: 60px;">Supprimer alerte </button>
           </div>
         </div>
     </div>
